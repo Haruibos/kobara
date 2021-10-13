@@ -60,3 +60,17 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#new gem
+
+#ユーザ認証機能
+gem 'devise'
+
+#リーダブルコード
+group :development do
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+end
+
+#ページネーション機能を追加する
+gem 'kaminari'
