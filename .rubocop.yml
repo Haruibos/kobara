@@ -13,3 +13,22 @@ inherit_from: .rubocop_todo.yml
 
 require:
  - rubocop-rails 
+ 
+ # 自動生成されたファイルを対象外にする
+AllCops:
+  Exclude:
+    - 'Gemfile'
+    - 'node_modules/**/*'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'test/**/*'
+    - 'spec/**/*'
+    
+# 1行の最大文字数を150字にする
+LineLength:
+  Max: 150
+  
+# ドキュメントのないclass, moduleを許可する
+Style/Documentation:
+  Enabled: false
