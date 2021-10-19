@@ -74,3 +74,10 @@ end
 
 #ページネーション機能を追加する
 gem 'kaminari'
+
+#MySQLを利用するために必要なgem
+#環境変数を管理するGem「変数」
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
