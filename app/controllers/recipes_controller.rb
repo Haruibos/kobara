@@ -13,11 +13,12 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipe = Recipe.all
+    @recipe = Recipe.page(params[:page]).reverse_order
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    @comment = Comment.new
   end
 
   def destroy
