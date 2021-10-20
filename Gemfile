@@ -73,8 +73,7 @@ group :development do
 end
 
 #ページネーション機能を追加する
-gem 'kaminari'
-
+gem 'kaminari','~> 1.2.1'
 
 #refileは、ファイルをアップロードできるようにするgemです。
 #refile-mini_magickは、アップロードした画像のリサイズを行えるgemです。リサイズ機能があると、投稿された画像を最適なサイズに変換できるようになります。
