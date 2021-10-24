@@ -1,0 +1,21 @@
+<div>
+  <h3><%= @user.name %></h3>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  <% if @user.id == current_user.id %>
+  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <% end %>
+</div>
+<% @recipes.each do |recipe| %>
+<div>
+  <%= link_to recipe_path(recipe.id) do %>
+    <%= attachment_image_tag recipe, :image %>
+  <% end %>
+  <p>投稿ユーザー画像:<%= attachment_image_tag recipe.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
+  <p>レシピ名:<%= recipe.name %></p>
+  <P>説明文:<%= recipe.description %></P>
+  <p>ユーザーネーム:<%= recipe.user.name %></p>
+  <p><%= link_to"#{recipe.comments.count} コメント", recipe_path(recipe.id) %></p>
+</div>
+<% end %>
+<!--kaminari-->
+<%= paginate @recipes %>

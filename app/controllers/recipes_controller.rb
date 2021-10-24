@@ -8,8 +8,11 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
-    @recipe.save
-    redirect_to recipe_path(@recipe.id)
+    if @recipe.save
+      redirect_to recipe_path(@recipe)
+    else
+      render :new
+    end
   end
 
   def index
@@ -17,6 +20,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    # params[:id] # => 4
     @recipe = Recipe.find(params[:id])
     @comment = Comment.new
   end
@@ -24,7 +28,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to recipe_path
+    redirect_to recipes_path
   end
 
   private
