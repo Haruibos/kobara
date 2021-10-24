@@ -9,6 +9,11 @@ class Recipe < ApplicationRecord
   has_many :tags, through: :recipe_tags
   has_many :favorites, dependent: :destroy
 
+  validates :name, presence: true
+  validates :image, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
