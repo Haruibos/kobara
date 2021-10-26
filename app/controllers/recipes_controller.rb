@@ -3,6 +3,8 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @ingredients = @recipe.ingredients.build # #親モデル.子モデル.buildで子モデルのインスタンス作成
+    @orders = @recipe.orders.build
   end
 
   def create
@@ -34,6 +36,12 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :image, :description, :title)
+    params.require(:recipe).permit(:name, :image, :description, :title,
+                                   ingredients_attributes: [:content, :_destroy],)
   end
+
+  # accepts_nested_attributes_forで指定したingredientsモデルを
+  # ingredients_attributes: []として一緒に追加して送ることができる。
+  # orders_attributes: []も同様。
+  # _destroyを入力することで、削除用のパラメータを受け入れられるようにする。
 end

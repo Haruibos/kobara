@@ -3,7 +3,10 @@ class Recipe < ApplicationRecord
   attachment :image
 
   has_many :ingredients, dependent: :destroy
+  
   has_many :orders, dependent: :destroy
+  accepts_nested_attributes_for :ingredients, :orders, allow_destroy: true
+  
   has_many :comments, dependent: :destroy
   has_many :recipe_tags, dependent: :destroy
   has_many :tags, through: :recipe_tags
