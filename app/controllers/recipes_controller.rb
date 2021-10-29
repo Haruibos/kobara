@@ -37,7 +37,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :image, :description, :title,
-                                   ingredients_attributes: [:content, :_destroy],)
+                                   ingredients_attributes: [:content, :_destroy, :quantity],)
   end
 
   # accepts_nested_attributes_forで指定したingredientsモデルを

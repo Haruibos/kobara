@@ -1,3 +1,5 @@
 class HomesController < ApplicationController
-  def top; end
+  def top
+    @recipes = Recipe.page("create_at DESC").page(params[:page]).per(4)
+  end
 end

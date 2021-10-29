@@ -1,21 +1,39 @@
-<div>
-  <h3><%= @user.name %></h3>
+<div class="container px-5 px-sm-0" style="margin-bottom: 15px;">
+  <div class="row">
+  <div class="col-md-12"><br>
+  <h2><span style="background-color:#FFEBCD">マイページ・投稿レシピ一覧</span></h2>
+</div>
+</div>
+</div>
+
+<div class="container px-5 px-sm-0">
+  <div class="row">
+  <div class="col-sm-4">
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  <h3><%= @user.name %></h3>
   <% if @user.id == current_user.id %>
   <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
   <% end %>
 </div>
+
+<div class="col-sm-8">
 <% @recipes.each do |recipe| %>
-<div>
+  <div>
   <%= link_to recipe_path(recipe.id) do %>
-    <%= attachment_image_tag recipe, :image %>
+    <%= attachment_image_tag recipe, :image , :fill, 400, 400%>
   <% end %>
   <p>投稿ユーザー画像:<%= attachment_image_tag recipe.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
   <p>レシピ名:<%= recipe.name %></p>
   <P>説明文:<%= recipe.description %></P>
   <p>ユーザーネーム:<%= recipe.user.name %></p>
   <p><%= link_to"#{recipe.comments.count} コメント", recipe_path(recipe.id) %></p>
+  <p>いいね件数: <%= recipe.favorites.count %></p>
 </div>
 <% end %>
+</div>
+
+</div>
+</div>
+
 <!--kaminari-->
 <%= paginate @recipes %>
