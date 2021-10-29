@@ -24,7 +24,17 @@
 
 ## 設計書
 
-<...>
+WBS
+https://docs.google.com/spreadsheets/d/1UbGHoQhOp4i-G_Pk4ixbdWF7yOZy5wrfpiyFWyHHZOA/edit#gid=977420151
+
+ER図
+https://app.diagrams.net/#G1xhxuKhL9BwCHFQ6RAEVGk9n0pcL3oHOO
+
+画面遷移図
+https://app.diagrams.net/#G1nygdxlMpte7TBGNO4l-_HmNs_g-EdvPB
+
+ワイヤーフレーム
+https://app.diagrams.net/#G1tX6un37gi16BH-GYiMa4sCaE0BVrCwpK
 
 ## チャレンジ要素一覧
 
