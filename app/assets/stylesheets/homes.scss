@@ -1,3 +1,11 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-container {
+   background-image: url(recipe.jpg);
+   height: 500px;
+   width: 100%;
+   background-size: cover;
+   background-position: center;
+  }

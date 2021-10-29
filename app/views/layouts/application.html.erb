@@ -11,7 +11,7 @@
 
   <body>
     <header class="border-bottom">
-    <nav class="navbar navbar-expand-lg px-4 pt-4 pb-3" >
+    <nav class="navbar navbar-expand-lg px-4 pt-4 pb-3" style="background-color:#524336">
     <div class="container-fluid">
       <% if user_signed_in? %>
         <span>
@@ -24,13 +24,13 @@
       <% end %>
 
     <% if user_signed_in? %>
-      <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
-      <li><%= link_to '投稿', new_recipe_path %></li>
-      <li><%= link_to 'レシピ一覧', recipes_path %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <li><%= link_to 'マイページ', user_path(current_user.id), class:"btn btn-md btn btn-outline-light mr-5" %></li>
+      <li><%= link_to '投稿', new_recipe_path , class:"btn btn-md btn btn-outline-light mr-5"%></li>
+      <li><%= link_to 'レシピ一覧', recipes_path , class:"btn btn-md btn btn-outline-light mr-5"%></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class:"btn btn-md btn btn-outline-light mr-5"%></li>
     <% else %>
-      <li><%= link_to '新規登録', new_user_registration_path %></li>
-      <li><%= link_to 'ログイン', new_user_session_path %></li>
+      <li><%= link_to '新規登録', new_user_registration_path , class:"btn btn-md btn btn-outline-light mr-5"%></li>
+      <li><%= link_to 'ログイン', new_user_session_path , class:"btn btn-md btn btn-outline-light mr-5"%></li>
     <% end %>
     </div>
     </nav>

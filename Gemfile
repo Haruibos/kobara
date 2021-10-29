@@ -87,3 +87,10 @@ group :production do
   gem 'mysql2'
 end
 
+#入力フォームの追加
+gem 'cocoon'
+gem "jquery-rails"
+
+#レイアウト
+gem 'bootstrap', '~> 4.5'
+gem 'font-awesome-sass', '~> 5.13'
