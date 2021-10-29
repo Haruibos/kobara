@@ -60,3 +60,37 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#new gem
+
+#ユーザ認証機能
+gem 'devise'
+
+#リーダブルコード
+group :development do
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+end
+
+#ページネーション機能を追加する
+gem 'kaminari','~> 1.2.1'
+
+#refileは、ファイルをアップロードできるようにするgemです。
+#refile-mini_magickは、アップロードした画像のリサイズを行えるgemです。リサイズ機能があると、投稿された画像を最適なサイズに変換できるようになります。
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
+#MySQLを利用するために必要なgem
+#環境変数を管理するGem「変数」
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
+
+#入力フォームの追加
+gem 'cocoon'
+gem "jquery-rails"
+
+#レイアウト
+gem 'bootstrap', '~> 4.5'
+gem 'font-awesome-sass', '~> 5.13'
