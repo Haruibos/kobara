@@ -16,6 +16,8 @@ class Recipe < ApplicationRecord
   validates :image, presence: true
   validates :title, presence: true
   validates :description, presence: true
+  
+  scope :latast_recipes_per_8, -> { reverse_order.per(8) }
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?

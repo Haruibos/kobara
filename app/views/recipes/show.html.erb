@@ -3,15 +3,15 @@
     <div class="col">
       <%= attachment_image_tag @recipe, :image , size: "500x400"%>
     </div>
-  
+
   <div class="col">
   <table>
     <h2><span style="background-color:#FFEBCD"><%= @recipe.name %></span></h2><br>
-  
+
   <h5><span style="background-color:#FFEBCD">材料</span></h5>
   <p>
     <% @recipe.ingredients.each do |ingredient| %><br>
-    <%= ingredient.content %>　
+    <%= ingredient.content %>
     <%= ingredient.quantity %>
     <% end %>
   </p>
@@ -41,7 +41,7 @@
   </div>
   </div>
 </div>
-  
+
 <div class="container">
   <div class="row mt-5">
   <div class="col-md-6">
@@ -49,7 +49,7 @@
   <% @recipe.comments.each do |comment| %>
     <p><%= attachment_image_tag comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
     <%= comment.user.name %>
-    <%= comment.created_at.strftime('%Y/%m/%d') %><br><%= comment.comment %>
+    <%= comment.created_at.strftime('%Y/%m/%d') %><br><%= comment.comment.gsub(/\n/, '<br>').html_safe %>
     <% if comment.user == current_user %>
     <div>
       <%= link_to "削除", recipe_comment_path(comment.recipe, comment), method: :delete %>

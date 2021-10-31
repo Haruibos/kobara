@@ -24,13 +24,13 @@
       <% end %>
 
     <% if user_signed_in? %>
-      <li><%= link_to 'マイページ', user_path(current_user.id), class:"btn btn-md btn btn-outline-light mr-5" %></li>
-      <li><%= link_to '投稿', new_recipe_path , class:"btn btn-md btn btn-outline-light mr-5"%></li>
-      <li><%= link_to 'レシピ一覧', recipes_path , class:"btn btn-md btn btn-outline-light mr-5"%></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class:"btn btn-md btn btn-outline-light mr-5"%></li>
+      <div><%= link_to 'マイページ', user_path(current_user.id), class:"btn btn-md btn btn-outline-light mr-5" %></div>
+      <div><%= link_to '投稿', new_recipe_path , class:"btn btn-md btn btn-outline-light mr-5"%></div>
+      <div><%= link_to 'レシピ一覧', recipes_path , class:"btn btn-md btn btn-outline-light mr-5"%></div>
+      <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class:"btn btn-md btn btn-outline-light mr-5"%></div>
     <% else %>
-      <li><%= link_to '新規登録', new_user_registration_path , class:"btn btn-md btn btn-outline-light mr-5"%></li>
-      <li><%= link_to 'ログイン', new_user_session_path , class:"btn btn-md btn btn-outline-light mr-5"%></li>
+      <div><%= link_to '新規登録', new_user_registration_path , class:"btn btn-md btn btn-outline-light mr-5"%></div>
+      <div><%= link_to 'ログイン', new_user_session_path , class:"btn btn-md btn btn-outline-light mr-5"%></div>
     <% end %>
     </div>
     </nav>

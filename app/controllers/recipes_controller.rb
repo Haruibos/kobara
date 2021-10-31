@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipe = Recipe.page(params[:page]).reverse_order
+    @recipe = Recipe.page(params[:page]).latast_recipes_per_8
   end
 
   def show
