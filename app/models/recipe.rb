@@ -18,6 +18,8 @@ class Recipe < ApplicationRecord
   validates :description, presence: true
   
   scope :latast_recipes_per_8, -> { reverse_order.per(8) }
+  # お作法、railsの深いところ
+  # 1ページに表示されるレシピ個数
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
